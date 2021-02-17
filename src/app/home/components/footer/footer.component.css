@@ -1,9 +1,7 @@
-
-
-  footer{
+footer{
     display: flex;
     background-color: #000;
-    height: 150px;
+    height: 160px;
     flex-direction: column;
 }
 

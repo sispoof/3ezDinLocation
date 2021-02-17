@@ -3,16 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DataViewModule } from "primeng/dataview";
+import { CarListComponent } from './car-list/car-list.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent],
+  declarations: [HomeComponent, NavbarComponent, HeaderComponent, FooterComponent, CarListComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    DataViewModule
   ]
 })
 export class HomeModule { }
+ 
