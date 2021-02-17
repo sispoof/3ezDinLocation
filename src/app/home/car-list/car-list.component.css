@@ -5,6 +5,7 @@
 :host ::ng-deep .product-name {
     font-size: 1.5rem;
     font-weight: 700;
+   
 }
 :host ::ng-deep .product-description {
     margin: 0 0 1rem 0;
@@ -25,7 +26,7 @@
 }
 :host ::ng-deep .product-list-item img {
     width: 150px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
     margin-right: 2rem;
 }
 :host ::ng-deep .product-list-item .product-list-detail {
@@ -49,7 +50,7 @@
 }
 :host ::ng-deep .product-grid-item {
     margin: 0.5em;
-    border: 1px solid var(--surface-d);
+    border: 1px solid #dee2e6;
 }
 :host ::ng-deep .product-grid-item .product-grid-item-top, :host ::ng-deep .product-grid-item .product-grid-item-bottom {
     display: flex;
@@ -58,7 +59,7 @@
 }
 :host ::ng-deep .product-grid-item img {
     width: 75%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
     margin: 2rem 0;
 }
 :host ::ng-deep .product-grid-item .product-grid-item-content {
@@ -67,6 +68,12 @@
 :host ::ng-deep .product-grid-item .product-price {
     font-size: 1.5rem;
     font-weight: 600;
+}
+.card {
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
 }
 @media screen and (max-width: 576px) {
     :host ::ng-deep .product-list-item {
@@ -94,4 +101,36 @@
         align-items: center;
         width: 100%;
    }
+}
+
+
+
+
+.image-list{
+    width: 120px !important;
+    height: 120px;
+    border-radius: 500px;
+}
+.search-input-div
+{
+    width: 200vh !important;
+    display: flex; 
+    justify-content: center;
+}
+.search-input
+{
+    border: none;
+    background-color: #F8F9FA;
+    border-bottom: 0.1px solid ;
+    text-align: center;
+    outline: none;
+}
+
+@media screen and (max-width: 700px){
+
+
+    .search-input-div{
+        width: auto !important;
+    }
+
 }

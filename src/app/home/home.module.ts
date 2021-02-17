@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DataViewModule } from "primeng/dataview";
 import { CarListComponent } from './car-list/car-list.component';
+import {ButtonModule} from 'primeng/button';
 
 
 
@@ -16,7 +17,8 @@ import { CarListComponent } from './car-list/car-list.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    DataViewModule
+    DataViewModule,
+    ButtonModule
   ]
 })
 export class HomeModule { }
