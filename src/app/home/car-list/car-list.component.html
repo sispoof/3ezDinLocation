@@ -1,6 +1,8 @@
 <app-header></app-header>
-<div>
-    <p-dataView #dv [value]="cars" [paginator]="true" [rows]="3" filterBy="name"
+<p-confirmDialog ></p-confirmDialog>
+<p-toast></p-toast>
+<div class="center-element">
+    <p-dataView #dv [value]="cars" [paginator]="true" [rows]="4" filterBy="name"
     layout="grid">
        
        <ng-template pTemplate="header">
@@ -8,40 +10,28 @@
            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
                <span class="p-input-icon-left p-mb-2 p-mb-md-0">
                     <div class="search-input-div">
-                         <input type="search" pInputText placeholder="chercher par nom" class="search-input" (input)="dv.filter($event.target.value)">
+                         <input type="search" pInputText placeholder="chercher par nom" (input)="dv.filter($event.target.value)">
                     </div>
                   
                    
                </span>
            </div>
        </ng-template>
-      
-       <ng-template  let-product pTemplate="gridItem" >
-            <div class="p-col-12 p-md-3">
-                         <div class="product-grid-item card">
-                   <div class="product-grid-item-top">
-                       <div>
-                           <img [src]="product.img" class="image-list" alt="">
-                           <!-- <span class="product-category">{{product.id}}</span> -->
-                       </div>
-                       <div style="display: flex; flex-direction: column;justify-content:center;align-items: center;">
-                            <span class="product-name" style="color: #0A4D8D ">{{product.name}}</span>
-                            <button pButton label="detail" class="p-button-outlined p-button-success"   style="margin-bottom:3px;"></button>
-                            <p-button label="reserver" icon="pi pi-plus" (click)="supprimer(product.id)"  iconPos="left"></p-button>
-                       </div>
-                      
-                   </div>
-                   <div class="product-grid-item-content">
-                       <div class="product-badge status">{{product.description}}</div>
-                       <div class="product-name">{{product.prix}}$</div>
-                   </div>
-                   <div class="product-grid-item-bottom mt-3">
-                       <!-- <span class="product-price">{{product.tel}}</span> -->
-
-                  
-                   </div>
-               </div>
+       <ng-template  let-product pTemplate="gridItem">
+        <p-card [header]="product.name" [subheader]="'prix: '+product.prix+'£'" [style]="{width: '310px','margin-left': '1em','margin-top':'1em','min-height':'500px',
+        'position':'relative' }" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+                <img alt="Card" [src]="product.img" height="200px">
+            </ng-template>
+            <p class="card-paragraph">nombre de personne: <span> {{product.nbrePer}} </span>  </p>
+            <p class="card-paragraph">nombre de port: <span> {{product.nmbrePort}} </span>  </p>
+            <p class="card-paragraph">vitesse: <span> {{product.vitesse}} </span>  </p>
+            <p class="card-paragraph">Option: <span> {{product.option}} </span>  </p>
+            <div>
+                <p-button label="reserver" icon="pi pi-calendar-plus" (click)="confirm()"></p-button>
+               
             </div>
+        </p-card>
       
            
        </ng-template>

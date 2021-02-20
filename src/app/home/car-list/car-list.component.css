@@ -134,3 +134,21 @@
     }
 
 }
+
+.center-element
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+}
+
+.card-paragraph
+{
+    font-size: 13.5px;
+    font-weight: bold;
+
+}
+.card-paragraph span{
+    font-weight: lighter;
+}

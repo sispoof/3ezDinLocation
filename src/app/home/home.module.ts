@@ -9,7 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DataViewModule } from "primeng/dataview";
 import { CarListComponent } from './car-list/car-list.component';
 import {ButtonModule} from 'primeng/button';
-
+import {CardModule} from 'primeng/card';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -18,7 +20,11 @@ import {ButtonModule} from 'primeng/button';
     CommonModule,
     HomeRoutingModule,
     DataViewModule,
-    ButtonModule
+    ButtonModule,
+    CardModule,
+    ToastModule,
+    ConfirmDialogModule,
+    
   ]
 })
 export class HomeModule { }
