@@ -51,13 +51,13 @@ export class CarListComponent implements OnInit {
 },
  {
    id:5,
-   name:'Fiat punto',
+   name:'Kia Rio',
    prix:66,
    nbrePer:4,
    nmbrePort:4,
-   option:'tu a le droit d\'écraser le braquageur',
+   option:'7 vitesse',
    vitesse:'manuelle',
-   img:'https://content.mosaiquefm.net/uploads/content/thumbnails/braquage_1609325948.jpg'
+   img:'https://images.netdirector.co.uk/gforces-auto/image/upload/w_372,h_279,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/32f8593c99d649039c6bfd8d11c12e8f/20_ex_1.jpg'
  }
 
 ];
