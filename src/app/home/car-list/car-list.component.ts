@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageService,ConfirmationService} from 'primeng/api';
+import { carList } from "../../../car/carlist";
+import {ActivatedRoute } from '@angular/router';
+import { carListModel } from "../../../car/model";
 
 @Component({
   selector: 'app-car-list',
@@ -10,60 +13,30 @@ import {MessageService,ConfirmationService} from 'primeng/api';
 export class CarListComponent implements OnInit {
 
  //Car list  
-  cars = [{
-    id:1,
-    name:'Hyundai i10',
-    prix:12,
-    nbrePer:4,
-    nmbrePort:4,
-    option:'Clim,airbag',
-    vitesse:'automatique',
-    img:'https://media.autoexpress.co.uk/image/private/s--u7bYZAf6--/v1563182812/autoexpress/2019/05/01_64.jpg'
-  },
-{
-  id:2,
-  name:'GOLF4',
-  prix:17,
-  nbrePer:5,
-  nmbrePort:4,
-  option:'Clim,airbag',
-  vitesse:'Manuelle',
-  img:'https://cdnx.nextinpact.com/data-next/images/bd/wide-linked-media/6314.jpg'
-},
-{
-  id:3,
-  name:'BMW e30',
-  prix:33,
-  nbrePer:2,
-  nmbrePort:2,
-  option:'Clim,airbag',
-  vitesse:'manuelle',
-  img:'https://www.tuningblog.eu/wp-content/uploads/2019/03/BMW-M3-E30-Restomod-Turbo-Tuning-Redux-Leichtbau-22.jpg'
-},{
-  id:4,
-  name:'mercedes Benz E200',
-  prix:455,
-  nbrePer:4,
-  nmbrePort:4,
-  option:'Clim',
-  vitesse:'Manuelle',
-  img:'https://s2.paultan.org/image/2019/03/W213-Mercedes-Benz-E200-SportStyle-Avantgarde-2.jpg'
-},
- {
-   id:5,
-   name:'Kia Rio',
-   prix:66,
-   nbrePer:4,
-   nmbrePort:4,
-   option:'7 vitesse',
-   vitesse:'manuelle',
-   img:'https://images.netdirector.co.uk/gforces-auto/image/upload/w_372,h_279,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/32f8593c99d649039c6bfd8d11c12e8f/20_ex_1.jpg'
- }
+  cars = carList;
+  //hné bech na3mel variable betbi3a li yet7at fel recherche ta3 el input (location) bech ntestih idha ken mawjoud fel json wallé 
+  //npushih fel variable heki fhemtallech w jawek fesfes
+  carSearch :carListModel[] = [];
 
-];
-  constructor(private messageService:MessageService,private confirmationService:ConfirmationService) { }
+  //variable chta5edh elli chercha 3lih si el client 
+  locationDepart;
+  locationRetour;
+
+  constructor(private messageService:MessageService,private confirmationService:ConfirmationService,
+    private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.locationDepart = this.route.snapshot.paramMap.get('pris');
+    this.locationRetour = this.route.snapshot.paramMap.get('retour');
+    this.cars.map(data => {if(this.locationDepart === data.location || this.locationRetour === data.location)
+         {
+          this.carSearch.push(data);
+         } 
+          
+    });
+    console.log(this.carSearch);
+    
+
   }
 
   confirm()

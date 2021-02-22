@@ -12,6 +12,9 @@ import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ToastModule} from 'primeng/toast';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import {ToastModule} from 'primeng/toast';
     CardModule,
     ToastModule,
     ConfirmDialogModule,
+    AutoCompleteModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
     
   ]
 })

@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <header class="header">
     <app-navbar style="width: 100%;"></app-navbar>
 
@@ -14,31 +15,45 @@
            
         </div>
 
-        <!-- chtetbaddel form ba3d kel div card -->
+        <!-- chtetbaddel balize form fi blaset kel div card  w jawek fasfasa-->
             <div class="card">
                 <div class="input-element" id="element">
                     <label for="adresse">PRISE DU VÉHICULE :</label>
-                    <input type="text" placeholder="tapez l'emplacement" id="resize">
+                    <input type="text" [formControl]="prisControl" [matAutocomplete]="auto" placeholder="tapez l'emplacement"
+                    >
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let street of filterCarLists | async" [value]="street">
+                          {{street}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    
                 </div>
 
                 <div class="input-element" id="element">
                     <label for="adresse">RETOUR DU VÉHICULE :</label>
-                    <input type="text" placeholder="tapez l'emplacement" id="resize">
+                    <input type="text" [formControl]="retourControl" [matAutocomplete]="ss" placeholder="tapez l'emplacement"
+                    >
+                    <mat-autocomplete #ss="matAutocomplete">
+                        <mat-option *ngFor="let street of filterCarListRetour | async" [value]="street">
+                          {{street}}
+                        </mat-option>
+                      </mat-autocomplete>
                 </div>
 
                 <div class="input-element">
                     <label for="date d'épare">Date Debut</label>
-                    <input type="date">
+                    <input type="date" [formControl]="datedeb">
                 </div>
 
                 <div class="input-element">
                     <label for="date d'épare">Date Fin</label>
-                    <input type="date">
+                    <input type="date" [formControl]="datefin" >
                     
                 </div>
          
+                <!-- routerLink="/home/list" -->
                 <div class="input-element">
-                   <button routerLink="/home/list"><i class="fa fa-search"></i></button> 
+                   <button (click)="accessPage()" ><i class="fa fa-search"></i></button> 
                 </div>
 
 

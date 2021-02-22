@@ -1,8 +1,8 @@
 <app-header></app-header>
 <p-confirmDialog ></p-confirmDialog>
 <p-toast></p-toast>
-<div class="center-element">
-    <p-dataView #dv [value]="cars" [paginator]="true" [rows]="4" filterBy="name"
+<div class="center-element" *ngIf="carSearch">
+    <p-dataView #dv [value]="carSearch" [paginator]="true" [rows]="4" filterBy="name"
     layout="grid">
        
        <ng-template pTemplate="header">
@@ -27,6 +27,7 @@
             <p class="card-paragraph">nombre de port: <span> {{product.nmbrePort}} </span>  </p>
             <p class="card-paragraph">vitesse: <span> {{product.vitesse}} </span>  </p>
             <p class="card-paragraph">Option: <span> {{product.option}} </span>  </p>
+            <p class="card-paragraph">Location: <span> {{product.location}} </span>  </p>
             <div>
                 <p-button label="reserver" icon="pi pi-calendar-plus" (click)="confirm()"></p-button>
                
